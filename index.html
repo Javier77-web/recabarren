@@ -202,9 +202,27 @@
     <button type="submit">Enviar formulario</button>
   </form>
 
-  <script>
+<script>
     function getParametro(nombre) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(nombre);
     }
-    window.onload = functi
+    window.onload = function() {
+      const tipo = getParametro('tipo');
+      const secciones = document.querySelectorAll('.bloque-formulario');
+      secciones.forEach(sec => sec.style.display = 'none');
+      if (tipo) {
+        const mostrar = document.getElementById('seccion-' + tipo);
+        if (mostrar) {
+          mostrar.style.display = 'block';
+        } else {
+          alert('Tipo de programa no válido.');
+        }
+      } else {
+        alert('No se especificó el tipo de programa en la URL.');
+      }
+    };
+  </script>
+
+</body>
+</html>
