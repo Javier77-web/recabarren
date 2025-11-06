@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario Fundación Recabarren</title>
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: "Segoe UI", Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #0073aa;
+    }
+    h2 {
+      color: #333;
+      margin-top: 20px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      background: #fff;
+    }
+    legend {
+      font-weight: 600;
+      color: #0073aa;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    input[type="file"] {
+      border: none;
+    }
+    button[type="submit"] {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #0073aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button[type="submit"]:hover {
+      background-color: #005f8d;
+    }
+    .bloque-formulario {
+      display: none;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      fieldset { padding: 15px; }
+      button[type="submit"] { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulario de Inscripción — Fundación Recabarren</h1>
+
+  <form action="https://formsubmit.co/Pruebareca123@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_next" value="https://formulario-recabarren.vercel.app/gra.html" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table">
+
+    <!-- SECCIÓN PROFESOR / EDUCADOR -->
+    <div id="seccion-profesor" class="bloque-formulario">
+      <h2>Programa Educativo</h2>
+      <label>Nombre completo*:</label>
+      <input type="text" name="nombre_profesor" required />
+      <label>Correo electrónico*:</label>
+      <input type="email" name="correo_profesor" required />
+      <label>Teléfono de contacto*:</label>
+      <input type="tel" name="telefono_profesor" required />
+      <label>Institución o establecimiento*:</label>
+      <input type="text" name="institucion_profesor" required />
+      <label>Tipo de actividad:</label>
+      <select name="actividad_profesor" required>
+        <option value="">Selecciona una opción</option>
+        <option value="arte">Profesor(a) de Arte</option>
+        <option value="historia">Profesor(a) de Historia</option>
+        <option value="practica">Práctica no convencional</option>
+        <option value="paseo_media">Paseo enseñanza media / escuelas laborales / uniformadas</option>
+        <option value="paseo_basico">Paseo pedagógico (párvulos / primer y segundo ciclo básico)</option>
+        <option value="itinerante">Museo itinerante o Taller itinerante</option>
+      </select>
+      <label>Comentarios adicionales (opcional):</label>
+      <textarea name="comentarios_profesor" rows="3"></textarea>
+    </div>
+
+    <!-- SECCIÓN ARTISTA / CREADOR -->
+    <div id="seccion-artista" class="bloque-formulario">
+      <h2>Programa de Residencias y Expresiones Artísticas</h2>
+      <label>Nombre completo:</label>
+      <input type="text" name="nombre_artista" required />
+      <label>Rut o Pasaporte:</label>
+      <input type="text" name="documento_artista" required />
+      <label>Nacionalidad:</label>
+      <input type="text" name="nacionalidad_artista" required />
+      <label>Correo electrónico:</label>
+      <input type="email" name="correo_artista" required />
+      <label>Teléfono:</label>
+      <input type="tel" name="telefono_artista" required />
+      <label>Profesión:</label>
+      <select name="profesion_artista" required>
+        <option value="">Selecciona una opción</option>
+        <option value="visual">Artista visual</option>
+        <option value="literario">Poeta o escritor</option>
+      </select>
+      <label>Fechas tentativas (opcional):</label>
+      <input type="text" name="fechas_artista" placeholder="Ej: Noviembre - Diciembre 2025" />
+      <label>¿Interés? (opcional):</label>
+      <textarea name="comentarios_artista" rows="3"></textarea>
+    </div>
+
+    <!-- SECCIÓN COMUNIDAD -->
+    <div id="seccion-comunidad" class="bloque-formulario">
+      <fieldset>
+        <legend>Datos del Solicitante</legend>
+        <label for="nombre_comunidad">Nombre completo *</label>
+        <input type="text" id="nombre_comunidad" name="nombre_comunidad" required placeholder="Ej: Carla Díaz">
+        <label for="correo_comunidad">Correo electrónico *</label>
+        <input type="email" id="correo_comunidad" name="correo_comunidad" required placeholder="Ej: comunidad@mail.com">
+        <label for="telefono_comunidad">Teléfono de contacto *</label>
+        <input type="tel" id="telefono_comunidad" name="telefono_comunidad" required placeholder="Ej: +56 9 8765 4321">
+        <label for="institucion_comunidad">Institución o grupo (opcional)</label>
+        <input type="text" id="institucion_comunidad" name="institucion_comunidad" placeholder="Ej: Junta de Vecinos San Bernardo">
+      </fieldset>
+      <fieldset>
+        <legend>Tipo de Actividad</legend>
+        <select id="actividad_comunidad" name="actividad_comunidad" required>
+          <option value="">Selecciona una opción</option>
+          <option value="familias">Taller artístico para familias</option>
+          <option value="mayores">Programa para personas mayores (municipalidades)</option>
+          <option value="autoguiada">Visita autoguiada (público general)</option>
+          <option value="institucional">Recorrido guiado institucional (universidades, ONGs, empresas, etc.)</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Observaciones (Opcional)</legend>
+        <label for="comentarios_comunidad">Comentarios adicionales</label>
+        <textarea id="comentarios_comunidad" name="comentarios_comunidad" rows="3" placeholder="Especifica detalles del grupo o actividad..."></textarea>
+        <label for="requerimientos_comunidad">Requerimientos especiales</label>
+        <textarea id="requerimientos_comunidad" name="requerimientos_comunidad" rows="3" placeholder="Ej: accesibilidad, transporte, apoyo adicional, etc."></textarea>
+      </fieldset>
+    </div>
+
+    <!-- SECCIÓN COLABORACIÓN / EVENTO -->
+    <div id="seccion-colaboracion" class="bloque-formulario">
+      <fieldset>
+        <legend>Datos del Solicitante</legend>
+        <label for="nombre_colaboracion">Nombre completo *</label>
+        <input type="text" id="nombre_colaboracion" name="nombre_colaboracion" required placeholder="Ej: Rodrigo Pérez">
+        <label for="cargo_colaboracion">Cargo o rol *</label>
+        <input type="text" id="cargo_colaboracion" name="cargo_colaboracion" required placeholder="Ej: Coordinador de Cultura">
+        <label for="institucion_colaboracion">Institución / organización *</label>
+        <input type="text" id="institucion_colaboracion" name="institucion_colaboracion" required placeholder="Ej: Municipalidad de San Bernardo">
+        <label for="correo_colaboracion">Correo electrónico *</label>
+        <input type="email" id="correo_colaboracion" name="correo_colaboracion" required>
+        <label for="telefono_colaboracion">Teléfono de contacto *</label>
+        <input type="tel" id="telefono_colaboracion" name="telefono_colaboracion" required placeholder="Ej: +56 9 7654 3210">
+      </fieldset>
+      <fieldset>
+        <legend>Tipo de Solicitud</legend>
+        <select id="tipo_colaboracion" name="tipo_colaboracion" required>
+          <option value="">Selecciona una opción</option>
+          <option value="alianza">Alianza o convenio</option>
+          <option value="efemeride">Participación en efemérides o evento especial</option>
+          <option value="propuesta_evento">Propuesta cultural / artística</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Detalles adicionales (Opcional)</legend>
+        <label for="descripcion_colaboracion">Descripción de la propuesta</label>
+        <textarea id="descripcion_colaboracion" name="descripcion_colaboracion" rows="4" placeholder="Agrega información relevante sobre tu propuesta, fechas o requerimientos."></textarea>
+        <label for="archivo_colaboracion">Adjuntar material de apoyo (opcional)</label>
+        <input type="file" id="archivo_colaboracion" name="archivo_colaboracion" multiple>
+      </fieldset>
+    </div>
+
+    <button type="submit">Enviar formulario</button>
+  </form>
+
+  <script>
+    function getParametro(nombre) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(nombre);
+    }
+    window.onload = functi
