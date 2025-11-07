@@ -80,7 +80,7 @@
   <h1>Formulario de Inscripción — Fundación Recabarren</h1>
 
   <form action="https://formsubmit.co/Pruebareca123@gmail.com" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_next" value="https://formulario-recabarren.vercel.app/gra.html" />
+    <input type="hidden" name="_next" value="https://recabarren.vercel.app/gracias.html" />
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table">
 
@@ -202,26 +202,35 @@
     <button type="submit">Enviar formulario</button>
   </form>
 
-<script>
-    function getParametro(nombre) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(nombre);
+  <script>
+  function getParametro(nombre) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nombre);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const tipo = getParametro("tipo");
+    const secciones = document.querySelectorAll(".bloque-formulario");
+
+    // Oculta todas las secciones y desactiva sus campos requeridos
+    secciones.forEach(sec => {
+      sec.style.display = "none";
+      sec.querySelectorAll("[required]").forEach(input => input.disabled = true);
+    });
+
+    // Muestra y activa solo la sección seleccionada
+    let mostrar = null;
+    if (tipo) {
+      mostrar = document.getElementById("seccion-" + tipo);
+    } else {
+      mostrar = document.getElementById("seccion-profesor"); // por defecto
     }
-    window.onload = function() {
-      const tipo = getParametro('tipo');
-      const secciones = document.querySelectorAll('.bloque-formulario');
-      secciones.forEach(sec => sec.style.display = 'none');
-      if (tipo) {
-        const mostrar = document.getElementById('seccion-' + tipo);
-        if (mostrar) {
-          mostrar.style.display = 'block';
-        } else {
-          alert('Tipo de programa no válido.');
-        }
-      } else {
-        alert('No se especificó el tipo de programa en la URL.');
-      }
-    };
+
+    if (mostrar) {
+      mostrar.style.display = "block";
+      mostrar.querySelectorAll("[disabled]").forEach(input => input.disabled = false);
+    }
+  });
   </script>
 
 </body>
